@@ -1,0 +1,35 @@
+main {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    margin: 0;
+    /* background-color: antiquewhite; */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 81%;
+    padding: 15px;
+    height: auto;
+    /* background-color: aquamarine; */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+
+}
+
+.main-container h4{
+    font-family: 'Inter';
+    font-size: large;
+    font-weight: 900;
+    margin-top:10px;
+    margin-bottom: 5px;
+}
