@@ -2,3 +2,12 @@ body {
   margin: 0;
   /* background: #E5E5E5; */
 }
+
+.body-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
