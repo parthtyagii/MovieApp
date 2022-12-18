@@ -8,7 +8,7 @@ export default function Main({showModal,setShowModal}) {
         <main>
             <div className="main-container">
                 <h4>Most Recent Movies</h4>
-                <Movies showModal={showModal} setShowModal={setShowModal} />
+                <Movies showModal={showModal} setShowModal={setShowModal}/>
             </div>
         </main>
     )

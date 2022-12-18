@@ -6,10 +6,13 @@ import './App.css';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+
+
+
   return (
     <div className='body-container'>
       <Navbar />
-      <Main showModal={showModal} setShowModal={setShowModal} />
+      <Main showModal={showModal} setShowModal={setShowModal}/>
       {showModal && <Modal showModal={showModal} setShowModal={setShowModal} />}
     </div>
   );
