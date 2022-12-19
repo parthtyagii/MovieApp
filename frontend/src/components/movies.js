@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SingleMovie from './singleMovie';
 
-export default function Movies({ showModal, setShowModal }) {
+export default function Movies({ showModal, setShowModal, setModalData }) {
 
     const [movies, setMovies] = useState([]);
 
@@ -25,16 +25,19 @@ export default function Movies({ showModal, setShowModal }) {
                         movie_rating = movie_rating.toFixed(1);
                     }
 
-                    const movieInfo = {
+                    const movieInfo={
                         id: m.id,
                         title: m.title,
                         overview: m.overview,
                         rating: movie_rating,
+                        releaseDate: m.release_date,
+                        voteCount: m.vote_count,
                         path: m.poster_path
-                    }
+                    };
+
                     return (
 
-                        <SingleMovie key={m.id} movieInfo={movieInfo} showModal={showModal} setShowModal={setShowModal} />
+                        <SingleMovie setModalData={setModalData} key={m.id} movieInfo={movieInfo} showModal={showModal} setShowModal={setShowModal} />
 
                     );
 

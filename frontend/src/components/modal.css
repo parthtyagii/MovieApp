@@ -20,11 +20,12 @@
     width: 600px;
     height: auto;
 
+    padding: 0;
     background-color: white;
-    opacity: 1;
 
     border: 1px solid black;
-    padding: 0;
+    border-radius: 2px;
+    
 
     display: flex;
     flex-direction: column;
@@ -45,10 +46,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .modal-header h3 {
+    max-width: 520px;
+    /* background-color: aqua; */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -71,6 +74,8 @@
 .modal-body {
     width: 100%;
     height: auto;
+    box-sizing: border-box;
+    /* background-color: antiquewhite; */
 
     display: flex;
     flex-direction: row;
@@ -83,6 +88,8 @@
     height: 350px;
     /* background-color: blue; */
     box-sizing: border-box;
+    
+    padding-top: 0;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -96,11 +103,19 @@
 .modal-body-img img {
     width: 270px;
     height: 330px;
+
+    border-radius: 2px;
+    box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.2);
 }
 
 .movie-info {
     width: 300px;
     height: 350px;
+    box-sizing: border-box;
+
+    padding-right: 15px;
+
+    font-size: 13px;
 
     display: flex;
     flex-direction: column;
@@ -110,7 +125,7 @@
 
 .movie-info p {
     margin: 0;
-    padding: 10px;
+    padding: 5px;
 
     font-family: 'Inter';
     font-style: normal;
