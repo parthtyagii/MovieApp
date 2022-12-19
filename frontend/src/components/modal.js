@@ -9,7 +9,7 @@ export default function Modal({ showModal, setShowModal, modalData }) {
     const date = parseInt(modalData.releaseDate.slice(-2));
     const month = months[parseInt(modalData.releaseDate.slice(5, 7)) - 1];
     const year = parseInt(modalData.releaseDate.slice(0, 4));
-    console.log(date, month, year);
+    // console.log(date, month, year);
 
     return (
         <div className="modal-background">

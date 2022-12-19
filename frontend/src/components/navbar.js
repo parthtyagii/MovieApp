@@ -4,6 +4,7 @@ import './navbar.css';
 import { TfiSearch } from 'react-icons/tfi';
 
 export default function Navbar() {
+
     return (
         <nav>
             <div className="nav-container">

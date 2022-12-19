@@ -12,8 +12,10 @@ main {
 }
 
 .main-container {
-    width: 81%;
-    padding: 15px;
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     height: auto;
     box-sizing: border-box;
 
@@ -24,10 +26,39 @@ main {
 
 }
 
-.main-container h4{
+.main-container h4 {
     font-family: 'Inter';
     font-size: large;
     font-weight: 900;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 5px;
+}
+
+.pages {
+    width: 100%;
+    min-height: 50px;
+    /* background-color: aqua; */
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages button {
+    min-width: 60px;
+    min-height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 0;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

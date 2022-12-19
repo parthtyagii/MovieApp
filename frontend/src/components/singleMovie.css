@@ -15,8 +15,6 @@
     height: auto;
     cursor: pointer;
 
-    transition: all 1s;
-
 
     /* background-color: aquamarine; */
     border-radius: 8px;
@@ -46,7 +44,7 @@
     align-items: center;
 }
 
-#movie-image{
+#movie-image {
     width: 100%;
     max-height: 270px;
     border-radius: 8px 8px 0 0;

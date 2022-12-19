@@ -2,6 +2,7 @@ nav {
     width: 100%;
     height: auto;
     /* background-color: antiquewhite; */
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -11,11 +12,16 @@ nav {
 
 .nav-container {
     width: 80%;
-    height: 60px;
+    height: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
     /* background-color: aquamarine; */
-    padding: 10px;
     box-sizing: border-box;
     /* border-bottom: 2px solid #C0C4CC; */
+
+    position:relative;
 
     display: flex;
     flex-direction: row;
@@ -29,12 +35,14 @@ nav {
 
 .nav-container input {
     height: 28px;
-    width: 210px;
+    width: 220px;
     box-sizing: border-box;
     border: 1px solid #C0C4CC;
     border-radius: 2px;
     padding: 10px;
     padding-left: 35px;
+
+    /* position: relative; */
 
     display: flex;
     flex-direction: row;
@@ -43,22 +51,22 @@ nav {
 }
 
 .nav-container hr {
-    width: 983px;
+    width: 968px;
     margin: 0;
     color: #C0C4CC;
     position: absolute;
-    top: 60px;
-    left: 140px;
+    top: 64px;
+    left: 15px;
     padding: 0;
-    
+
     box-sizing: border-box;
     border: 2px solid #C0C4CC;
 }
 
-#searchSymbol{
+#searchSymbol {
     height: 15px;
-    color:#C0C4CC;
+    color: #C0C4CC;
 
-    position:absolute;
-    left:928px;
+    position: absolute;
+    left: 770px;
 }
