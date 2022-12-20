@@ -7,12 +7,11 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
 
     const getAllMovies = async () => {
         try {
-            const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=74897e41b263b3bb2c0e1d05a44be4c0&page=${page}`);
+            const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`);
             const data = await response.json();
             if (page <= 1) {
                 setPages(data.total_pages)
             }
-            // console.log(pages);
             //now
             setMovies(data.results);
         }
@@ -23,12 +22,11 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
 
     const getAllSearchedMovies = async () => {
         try {
-            const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=74897e41b263b3bb2c0e1d05a44be4c0&page=${foundPage}&query=${searchWord}`);
+            const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&page=${foundPage}&query=${searchWord}`);
             const data = await response.json();
             if (foundPage <= 1) {
                 setTotalPages(data.total_pages);
             }
-            console.log(data.total_pages)
             //now
             setSearchedMovies(data.results);
         }
@@ -51,7 +49,6 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
         <div className='movies-container'>
             {!searching &&
                 movies.map((m) => {
-                    // console.log(m)
                     let movie_rating = m.vote_average;
                     if (movie_rating % 1 !== 0) {
                         movie_rating = movie_rating.toFixed(1);
@@ -76,7 +73,6 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
 
             {searching &&
                 searchedMovies.map((m) => {
-                    // console.log(m)
                     let movie_rating = m.vote_average;
                     if (movie_rating % 1 !== 0) {
                         movie_rating = movie_rating.toFixed(1);

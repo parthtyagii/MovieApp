@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Movies from './movies';
-import './main.css';
+import '../statics/main.css';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 
 export default function Main({ showModal, setShowModal, setModalData, searching, searchedMovies, setSearchedMovies, foundPage, setFoundPage, totalPages, setTotalPages, searchWord }) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { GrClose } from 'react-icons/gr';
-import './modal.css';
+import '../statics/modal.css';
 
 export default function Modal({ showModal, setShowModal, modalData }) {
 
@@ -9,7 +9,6 @@ export default function Modal({ showModal, setShowModal, modalData }) {
     const date = parseInt(modalData.releaseDate.slice(-2));
     const month = months[parseInt(modalData.releaseDate.slice(5, 7)) - 1];
     const year = parseInt(modalData.releaseDate.slice(0, 4));
-    // console.log(date, month, year);
 
     return (
         <div className="modal-background">

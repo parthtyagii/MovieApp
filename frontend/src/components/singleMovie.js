@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GrTrophy } from 'react-icons/gr';
-import './singleMovie.css';
+import '../statics/singleMovie.css';
 
 export default function SingleMovie({ movieInfo, showModal, setShowModal, setModalData }) {
 
@@ -10,9 +9,7 @@ export default function SingleMovie({ movieInfo, showModal, setShowModal, setMod
 
     const handler = () => {
         try {
-
             setShowModal(!showModal);
-            // console.log(allData);
             setModalData({
                 ...allData,
                 URL: `https://image.tmdb.org/t/p/w500${imageUrl}`
@@ -25,7 +22,7 @@ export default function SingleMovie({ movieInfo, showModal, setShowModal, setMod
 
     const findImage = async () => {
         try {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${movieInfo.id}/images?api_key=74897e41b263b3bb2c0e1d05a44be4c0`)
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${movieInfo.id}/images?api_key=${process.env.REACT_APP_API_KEY}`)
             const data = await response.json();
             //now
             if (data.posters && movieInfo.title && movieInfo.rating && (data.posters.length !== 0)) {
