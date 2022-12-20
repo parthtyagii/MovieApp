@@ -12,7 +12,7 @@ nav {
 
 .nav-container {
     width: 78%;
-    height: 70px;
+    height: auto;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 0;
@@ -32,7 +32,7 @@ nav {
 }
 
 .nav-container input {
-    height: 29px;
+    height: 30px;
     width: 220px;
     box-sizing: border-box;
     border: 1px solid #C0C4CC;
@@ -41,6 +41,7 @@ nav {
     padding-bottom: 5px;
     padding-left: 15px;
     padding-right: 15px;
+    font-size: 14px;
 
 
     /* position: relative; */
@@ -64,10 +65,33 @@ nav {
     border: 2px solid #C0C4CC;
 }
 
-/* #searchSymbol {
-    height: 15px;
-    color: #C0C4CC;
+.logo-container {
+    width: auto;
+    height: auto;
 
-    position: absolute;
-    left: 770px;
-} */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container span {
+    height: auto;
+    width: auto;
+    font-family: 'Inter';
+    font-size: 30px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: auto;
+    height: auto;
+    font-size: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

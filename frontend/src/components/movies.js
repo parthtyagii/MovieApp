@@ -9,7 +9,7 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
         try {
             const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`);
             const data = await response.json();
-            if (page <= 1) {
+            if (page <= 2) {
                 setPages(data.total_pages)
             }
             //now
@@ -24,7 +24,7 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
         try {
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&page=${foundPage}&query=${searchWord}`);
             const data = await response.json();
-            if (foundPage <= 1) {
+            if (foundPage <= 2) {
                 setTotalPages(data.total_pages);
             }
             //now

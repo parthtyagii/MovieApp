@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import movieAppTitle from '../INSYNK.jpg';
 import '../statics/navbar.css';
+import { SiThemoviedatabase } from 'react-icons/si';
 
 export default function Navbar({ setSearching, setSearchWord }) {
 
@@ -14,12 +15,14 @@ export default function Navbar({ setSearching, setSearchWord }) {
         }
     }
 
-
     return (
         <nav>
             <div className="nav-container">
-                <img src={movieAppTitle} alt="movieAppTitle" />
-                <input type="text" placeholder="Search for a movie" onChange={(e) => changeHandler(e)} />
+                <div className="logo-container">
+                    <SiThemoviedatabase className='logo' />
+                    <span>MovieMap</span>
+                </div>
+                <input type="text" placeholder="Search for a movie" onChange={(e) => changeHandler(e)}  />
             </div>
         </nav>
     );
