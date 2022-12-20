@@ -11,17 +11,15 @@ nav {
 }
 
 .nav-container {
-    width: 80%;
+    width: 78%;
     height: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
     /* background-color: aquamarine; */
     box-sizing: border-box;
-    /* border-bottom: 2px solid #C0C4CC; */
-
-    position:relative;
+    border-bottom: 3px solid #C0C4CC;
 
     display: flex;
     flex-direction: row;
@@ -34,13 +32,16 @@ nav {
 }
 
 .nav-container input {
-    height: 28px;
+    height: 29px;
     width: 220px;
     box-sizing: border-box;
     border: 1px solid #C0C4CC;
     border-radius: 2px;
-    padding: 10px;
-    padding-left: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+
 
     /* position: relative; */
 
@@ -63,10 +64,10 @@ nav {
     border: 2px solid #C0C4CC;
 }
 
-#searchSymbol {
+/* #searchSymbol {
     height: 15px;
     color: #C0C4CC;
 
     position: absolute;
     left: 770px;
-}
+} */

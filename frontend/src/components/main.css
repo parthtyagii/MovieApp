@@ -4,6 +4,7 @@ main {
     padding: 5px;
     margin: 0;
     box-sizing: border-box;
+    /* background-color: aqua; */
 
     display: flex;
     flex-direction: column;
