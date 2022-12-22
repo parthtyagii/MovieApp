@@ -3,7 +3,6 @@
   
   <h1 align="center">MovieMap</h1>
   <br>
-  <br>
   
 </p>
 
