@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../statics/singleMovie.css';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 export default function SingleMovie({ movieInfo, showModal, setShowModal, setModalData }) {
 
     const [imageUrl, setImageUrl] = useState('');
@@ -50,7 +54,7 @@ export default function SingleMovie({ movieInfo, showModal, setShowModal, setMod
     return (
         <>
             {show &&
-                <div className="movie" onClick={() => handler()} >
+                <div className="movie" onClick={() => handler()} data-aos="zoom-in" >
                     <div className="upperPart">
                         <img id='movie-image' src={`https://image.tmdb.org/t/p/w500${imageUrl}`} alt="movieImage" />
                     </div>
