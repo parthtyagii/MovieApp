@@ -47,7 +47,7 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
 
     return (
         <div className='movies-container'>
-            {!searching &&
+            {!searching && movies &&
                 movies.map((m) => {
                     let movie_rating = m.vote_average;
                     if (movie_rating % 1 !== 0) {
