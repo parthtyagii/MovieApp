@@ -40,12 +40,6 @@ To get a local copy up and running follow these simple example steps.
      npm install npm@latest -g
 ```
 
-* basic react setup
-
-```sh
-     npx create-react-app
-```
-
 ### Installation
 
 * Get a free API Key  by signing up for TMDB
@@ -64,10 +58,16 @@ To get a local copy up and running follow these simple example steps.
 
 * Create a `.env` in the root directory 
 
- * Enter your API in `.env`
+* Enter your API in `.env`
 
 ```JS
      REACT_APP_API_KEY = 'ENTER YOUR API'
+```
+
+* Run command 
+
+```sh
+     npm start
 ```
 
 ## Authors
