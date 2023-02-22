@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Movies from './movies';
 import '../statics/main.css';
 import { FcNext, FcPrevious } from 'react-icons/fc';
+import ScaleLoader from 'react-spinners/ScaleLoader';
+
+
 
 export default function Main({ showModal, setShowModal, setModalData, searching, searchedMovies, setSearchedMovies, foundPage, setFoundPage, totalPages, setTotalPages, searchWord }) {
     const [page, setPage] = useState(1);
     const [pages, setPages] = useState(0);
+    const [loading, setLoading] = useState(false);
+
 
     const nextHandler = () => {
         try {
@@ -50,7 +55,9 @@ export default function Main({ showModal, setShowModal, setModalData, searching,
         <main>
             <div className="main-container">
                 <h4>Most Recent Movies</h4>
-                <Movies searchWord={searchWord} pages={pages} setPages={setPages} totalPages={totalPages} setTotalPages={setTotalPages} setModalData={setModalData} showModal={showModal} setShowModal={setShowModal} page={page} searching={searching} searchedMovies={searchedMovies} setSearchedMovies={setSearchedMovies} foundPage={foundPage} setFoundPage={setFoundPage} />
+
+                <Movies loading={loading} setLoading={setLoading} searchWord={searchWord} pages={pages} setPages={setPages} totalPages={totalPages} setTotalPages={setTotalPages} setModalData={setModalData} showModal={showModal} setShowModal={setShowModal} page={page} searching={searching} searchedMovies={searchedMovies} setSearchedMovies={setSearchedMovies} foundPage={foundPage} setFoundPage={setFoundPage} />
+
                 <div className="pages">
                     {!searching && (pages > 1) &&
                         <button className="prev" onClick={() => prevHandler()}  >

@@ -6,9 +6,9 @@ import { SiThemoviedatabase } from 'react-icons/si';
 export default function Navbar({ setSearching, setSearchWord }) {
 
     const changeHandler = (e) => {
+        setSearchWord(e.target.value);
         if (e.target.value !== '') {
             setSearching(true);
-            setSearchWord(e.target.value);
         }
         else {
             setSearching(false);
@@ -22,7 +22,7 @@ export default function Navbar({ setSearching, setSearchWord }) {
                     <SiThemoviedatabase className='logo' />
                     <span>MovieMap</span>
                 </div>
-                <input type="text" placeholder="Search for a movie" onChange={(e) => changeHandler(e)}  />
+                <input type="text" placeholder="Search for a movie" onChange={(e) => changeHandler(e)} />
             </div>
         </nav>
     );

@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import SingleMovie from './singleMovie';
+import '../statics/movies.css';
+import ScaleLoader from 'react-spinners/ScaleLoader';
 
-export default function Movies({ showModal, setShowModal, setModalData, page, pages, setPages, searching, searchedMovies, setSearchedMovies, foundPage, setFoundPage, totalPages, setTotalPages, searchWord }) {
+
+
+export default function Movies({ loading, setLoading, showModal, setShowModal, setModalData, page, pages, setPages, searching, searchedMovies, setSearchedMovies, foundPage, setFoundPage, totalPages, setTotalPages, searchWord }) {
 
     const [movies, setMovies] = useState([]);
 
+
     const getAllMovies = async () => {
         try {
+            setLoading(true);
             const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`);
             const data = await response.json();
             if (page <= 2) {
@@ -14,6 +20,9 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
             }
             //now
             setMovies(data.results);
+            setTimeout(() => {
+                setLoading(false);
+            }, 1000);
         }
         catch (e) {
             console.log(e);
@@ -22,6 +31,7 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
 
     const getAllSearchedMovies = async () => {
         try {
+            setLoading(true);
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&page=${foundPage}&query=${searchWord}`);
             const data = await response.json();
             if (foundPage <= 2) {
@@ -29,12 +39,14 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
             }
             //now
             setSearchedMovies(data.results);
+            setTimeout(() => {
+                setLoading(false);
+            }, 1000);
         }
         catch (e) {
             console.log(e);
         }
     }
-
 
     useEffect(() => {
         getAllMovies();
@@ -44,10 +56,18 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
         getAllSearchedMovies();
     }, [foundPage, searchWord]);
 
+    // console.log(foundPage, pages, totalPages);
 
     return (
         <div className='movies-container'>
-            {!searching && movies &&
+
+            {loading &&
+                <div className="moviesLoader">
+                    <ScaleLoader color="#B2B2B2" height='100px' width='15px' />
+                </div>
+            }
+
+            {!loading && !searching && movies &&
                 movies.map((m) => {
                     let movie_rating = m.vote_average;
                     if (movie_rating % 1 !== 0) {
@@ -71,7 +91,7 @@ export default function Movies({ showModal, setShowModal, setModalData, page, pa
                 })
             }
 
-            {searching && searchedMovies &&
+            {!loading && searching && searchedMovies &&
                 searchedMovies.map((m) => {
                     let movie_rating = m.vote_average;
                     if (movie_rating % 1 !== 0) {
